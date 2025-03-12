@@ -1,8 +1,15 @@
-import MainPage from '../../pages/main-page/main-page';
+import MainPage from '../../pages/MainPage/MainPage';
 
-function App(): JSX.Element {
+type AppScreenProps = {
+  cardsCount: number;
+}
+
+function App({cardsCount}: AppScreenProps): JSX.Element {
   return (
-    <MainPage/>
+    <MainPage cardsCount={
+      cardsCount
+    }
+    />
   );
 }
 
