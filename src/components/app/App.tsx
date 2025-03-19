@@ -5,7 +5,7 @@ import OfferPage from '../../pages/OfferPage/OfferPage';
 import FavoritesPage from '../../pages/FavoritesPage/FavoritesPage';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
-import { AuthStatus } from '../../const';
+import { AuthStatus, Paths } from '../../const';
 
 type AppScreenProps = {
   cardsCount: number;
@@ -15,10 +15,10 @@ function App({cardsCount}: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MainPage cardsCount={cardsCount} />} />
-        <Route path='login' element={<LoginPage />} />
+        <Route path={Paths.Home} element={<MainPage cardsCount={cardsCount} />} />
+        <Route path={Paths.Login} element={<LoginPage />} />
         <Route
-          path='favorites'
+          path={Paths.Favorites}
           element={
             <PrivateRoute
               authStatus={AuthStatus.NoAuth}
@@ -27,7 +27,7 @@ function App({cardsCount}: AppScreenProps): JSX.Element {
             </PrivateRoute>
           }
         />
-        <Route path='offer/:id' element={<OfferPage />} />
+        <Route path={Paths.Offer} element={<OfferPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

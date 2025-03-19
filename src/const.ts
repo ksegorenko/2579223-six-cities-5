@@ -7,3 +7,10 @@ export enum AuthStatus {
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
 }
+
+export enum Paths {
+  Home = '/',
+  Login = '/login',
+  Offer = 'offer/:id',
+  Favorites = '/favorites',
+}
