@@ -14,3 +14,12 @@ export enum Paths {
   Offer = 'offer/:id',
   Favorites = '/favorites',
 }
+
+export enum CityName {
+  Amsterdam = 'Amsterdam',
+  Berlin = 'Berlin',
+  Paris = 'Paris',
+  Bern = 'Bern',
+  Moscow = 'Moscow',
+  London = 'London'
+}
