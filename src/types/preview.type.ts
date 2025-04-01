@@ -12,4 +12,5 @@ export type OfferPreview = {
   price: number;
   title: string;
   type: string;
+  rating: number;
 };
