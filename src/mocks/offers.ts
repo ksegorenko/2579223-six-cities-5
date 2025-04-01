@@ -16,16 +16,16 @@ const offers: Offer[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4,
-    previewImage: `https://loremflickr.com/320/240?random=${crypto.randomUUID()}`,
+    previewImage: 'img/apartment-01.jpg',
     description: 'A quiet cozy and picturesque place in the heart of Paris.',
     bedrooms: 3,
     goods: ['Heating'],
     host: {
       name: 'Oliver Conner',
-      avatarUrl: `https://loremflickr.com/320/240?random=${crypto.randomUUID()}`,
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false
     },
-    images: [`https://loremflickr.com/320/240?random=${crypto.randomUUID()}`],
+    images: ['img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg'],
     maxAdults: 4
   },
   {
@@ -42,16 +42,16 @@ const offers: Offer[] = [
     isFavorite: true,
     isPremium: true,
     rating: 4.8,
-    previewImage: `https://loremflickr.com/320/240?random=${crypto.randomUUID()}`,
+    previewImage: 'img/apartment-02.jpg',
     description: 'A stylish and modern apartment in the vibrant center of Berlin.',
     bedrooms: 2,
     goods: ['Wi-Fi', 'Washing machine', 'Air conditioning'],
     host: {
       name: 'Anna Schmidt',
-      avatarUrl: `https://loremflickr.com/320/240?random=${crypto.randomUUID()}`,
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: true
     },
-    images: [`https://loremflickr.com/320/240?random=${crypto.randomUUID()}`],
+    images: ['img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg'],
     maxAdults: 2
   },
   {
@@ -68,16 +68,16 @@ const offers: Offer[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.5,
-    previewImage: `https://loremflickr.com/320/240?random=${crypto.randomUUID()}`,
+    previewImage: 'img/amsterdam.jpg',
     description: 'A comfortable house with a beautiful garden, close to the city center.',
     bedrooms: 4,
     goods: ['Parking', 'Garden', 'Kitchen'],
     host: {
       name: 'Johan de Vries',
-      avatarUrl: `https://loremflickr.com/320/240?random=${crypto.randomUUID()}`,
+      avatarUrl: 'img/avatar-max.jpg',
       isPro: true
     },
-    images: [`https://loremflickr.com/320/240?random=${crypto.randomUUID()}`],
+    images: ['img/apartment-small-03.jpg', 'img/apartment-small-04.jpg'],
     maxAdults: 6
   },
   {
@@ -94,16 +94,16 @@ const offers: Offer[] = [
     isFavorite: true,
     isPremium: true,
     rating: 5,
-    previewImage: `https://loremflickr.com/320/240?random=${crypto.randomUUID()}`,
+    previewImage: 'img/room-small.jpg',
     description: 'An exclusive penthouse with breathtaking city views.',
     bedrooms: 5,
     goods: ['Swimming pool', 'Gym', 'Sauna'],
     host: {
       name: 'Michael Johnson',
-      avatarUrl: `https://loremflickr.com/320/240?random=${crypto.randomUUID()}`,
+      avatarUrl: 'img/avatar.svg',
       isPro: true
     },
-    images: [`https://loremflickr.com/320/240?random=${crypto.randomUUID()}`],
+    images: ['img/room-small.jpg', 'img/room.jpg'],
     maxAdults: 8
   }
 ];

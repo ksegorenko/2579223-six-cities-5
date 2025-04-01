@@ -1,4 +1,10 @@
-function FavoritesPage(): JSX.Element {
+import { Offer } from '../../types/offer.type';
+
+type FavoritesPageProps = {
+  offers: Offer[];
+}
+
+function FavoritesPage({offers}: FavoritesPageProps): JSX.Element {
   return (
     <div className="page">
       <header className="header">

@@ -1,4 +1,10 @@
-function OfferPage(): JSX.Element {
+import { Offer } from '../../types/offer.type';
+
+type OfferPageProps = {
+  offers: Offer[];
+}
+
+function OfferPage({offers}: OfferPageProps): JSX.Element {
   return (
     <div className="page">
       <header className="header">

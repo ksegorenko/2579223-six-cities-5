@@ -1,10 +1,37 @@
-function PlaceCard(): JSX.Element {
+import { Link } from 'react-router-dom';
+import { OfferPreview } from '../../types/preview.type';
+
+type CardImageSize = 'small' | 'large';
+
+type CardProps = {
+  offer: OfferPreview;
+  size?: CardImageSize;
+};
+
+const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
+  small: { width: '150', height: '110' },
+  large: { width: '260', height: '200' },
+};
+
+function PlaceCard({ offer, size = 'large' }: CardProps): JSX.Element {
+  const { isPremium, previewImage, id, price, rating, title, type } = offer;
+
   return (
     <article className="cities__card place-card">
+      {isPremium && (
+        <div className="place-card__mark">
+          <span>Premium</span>
+        </div>
+      )}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
-          <img className="place-card__image" src="img/apartment-01.jpg" width="260" height="200" alt="Place image"/>
-        </a>
+        <Link to='/'>
+          <img
+            className="place-card__image"
+            src={previewImage}
+            alt={title}
+            {...sizeMap[size]}
+          />
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
