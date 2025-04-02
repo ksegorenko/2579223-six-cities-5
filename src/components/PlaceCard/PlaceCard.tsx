@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { OfferPreview } from '../../types/preview.type';
+import { getRatingWidth } from '../../utils';
 
 type CardImageSize = 'small' | 'large';
 
@@ -14,7 +15,7 @@ const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
 };
 
 function PlaceCard({ offer, size = 'large' }: CardProps): JSX.Element {
-  const { isPremium, previewImage, id, price, rating, title, type } = offer;
+  const { isPremium, previewImage, price, rating, title, type } = offer;
 
   return (
     <article className="cities__card place-card">
@@ -36,7 +37,7 @@ function PlaceCard({ offer, size = 'large' }: CardProps): JSX.Element {
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">&euro;120</b>
+            <b className="place-card__price-value">&euro;{price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
           <button className="place-card__bookmark-button button" type="button">
@@ -49,7 +50,7 @@ function PlaceCard({ offer, size = 'large' }: CardProps): JSX.Element {
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
             <span style={{
-              width: '80%'
+              width: getRatingWidth(rating)
             }}
             >
             </span>
@@ -57,9 +58,9 @@ function PlaceCard({ offer, size = 'large' }: CardProps): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">Beautiful &amp; luxurious apartment at great location</a>
+          <a href="#">{title}</a>
         </h2>
-        <p className="place-card__type">Apartment</p>
+        <p className="place-card__type">{type}</p>
       </div>
     </article>
   );

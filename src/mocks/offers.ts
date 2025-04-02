@@ -7,7 +7,7 @@ const offers: Offer[] = [
     title: 'Beautiful & luxurious studio at great location',
     type: 'apartment',
     price: 120,
-    city: CityMap.Paris,
+    city: CityMap.Amsterdam,
     location: {
       latitude: 48.8566,
       longitude: 2.3522,
@@ -30,10 +30,10 @@ const offers: Offer[] = [
   },
   {
     id: 'c8f5b8b4-4b9e-42c2-918c-5a2aaf1f7e31',
-    title: 'Modern apartment in the center of Berlin',
+    title: 'Modern apartment in the center of Amsterdam',
     type: 'apartment',
     price: 200,
-    city: CityMap.Berlin,
+    city: CityMap.Amsterdam,
     location: {
       latitude: 52.5200,
       longitude: 13.4050,
@@ -82,10 +82,10 @@ const offers: Offer[] = [
   },
   {
     id: 'a54b4a2e-12cd-453e-97d4-efb768c234d6',
-    title: 'Luxury penthouse with a stunning view in London',
+    title: 'Luxury penthouse with a stunning view in Amsterdam',
     type: 'penthouse',
     price: 500,
-    city: CityMap.London,
+    city: CityMap.Amsterdam,
     location: {
       latitude: 51.5074,
       longitude: -0.1278,

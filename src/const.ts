@@ -19,27 +19,19 @@ export enum Paths {
 
 export enum CityName {
   Amsterdam = 'Amsterdam',
-  Berlin = 'Berlin',
   Paris = 'Paris',
-  Bern = 'Bern',
-  Moscow = 'Moscow',
-  London = 'London'
+  Cologne = 'Cologne',
+  Brussels = 'Brussels',
+  Hamburg = 'Hamburg',
+  Dusseldorf = 'Dusseldorf'
 }
 
 export const CityMap: Record<CityName, City> = {
   [CityName.Amsterdam]: {
     name: CityName.Amsterdam,
     location: {
-      latitude: 52.35514938496378,
-      longitude: 4.673877537499948,
-      zoom: 8,
-    },
-  },
-  [CityName.Berlin]: {
-    name: CityName.Berlin,
-    location: {
-      latitude: 52.5200066,
-      longitude: 13.404954,
+      latitude: 52.3676,
+      longitude: 4.9041,
       zoom: 8,
     },
   },
@@ -51,27 +43,35 @@ export const CityMap: Record<CityName, City> = {
       zoom: 8,
     },
   },
-  [CityName.Bern]: {
-    name: CityName.Bern,
+  [CityName.Cologne]: {
+    name: CityName.Cologne,
     location: {
-      latitude: 46.9481,
-      longitude: 7.4474,
+      latitude: 50.9375,
+      longitude: 6.9603,
       zoom: 8,
     },
   },
-  [CityName.Moscow]: {
-    name: CityName.Moscow,
+  [CityName.Brussels]: {
+    name: CityName.Brussels,
     location: {
-      latitude: 55.7558,
-      longitude: 37.6173,
+      latitude: 50.8503,
+      longitude: 4.3517,
       zoom: 8,
     },
   },
-  [CityName.London]: {
-    name: CityName.London,
+  [CityName.Hamburg]: {
+    name: CityName.Hamburg,
     location: {
-      latitude: 51.5074,
-      longitude: -0.1278,
+      latitude: 53.5511,
+      longitude: 9.9937,
+      zoom: 8,
+    },
+  },
+  [CityName.Dusseldorf]: {
+    name: CityName.Dusseldorf,
+    location: {
+      latitude: 51.2277,
+      longitude: 6.7735,
       zoom: 8,
     },
   },
