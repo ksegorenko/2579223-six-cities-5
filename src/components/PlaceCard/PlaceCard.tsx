@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { OfferPreview } from '../../types/preview.type';
 import { getRatingWidth } from '../../utils';
+import { useState } from 'react';
 
 type CardImageSize = 'small' | 'large';
 
@@ -15,10 +16,15 @@ const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
 };
 
 function PlaceCard({ offer, size = 'large' }: CardProps): JSX.Element {
-  const { isPremium, previewImage, price, rating, title, type } = offer;
+  const { id, isPremium, previewImage, price, rating, title, type } = offer;
+  const [activeCard, setActiveCard] = useState<string | null>(null);
 
   return (
-    <article className="cities__card place-card">
+    <article
+      className="cities__card place-card"
+      onMouseEnter={() => setActiveCard(id)}
+      onMouseLeave={() => setActiveCard(null)}
+    >
       {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
