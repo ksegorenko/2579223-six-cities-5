@@ -7,6 +7,7 @@ type CardImageSize = 'small' | 'large';
 
 type CardProps = {
   offer: OfferPreview;
+  block: string;
   size?: CardImageSize;
 };
 
@@ -15,13 +16,13 @@ const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
   large: { width: '260', height: '200' },
 };
 
-function PlaceCard({ offer, size = 'large' }: CardProps): JSX.Element {
+function PlaceCard({ offer, block, size = 'large' }: CardProps): JSX.Element {
   const { id, isPremium, previewImage, price, rating, title, type } = offer;
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
   return (
     <article
-      className="cities__card place-card"
+      className={`${block}__card place-card`}
       onMouseEnter={() => setActiveCard(id)}
       onMouseLeave={() => setActiveCard(null)}
     >
@@ -30,7 +31,7 @@ function PlaceCard({ offer, size = 'large' }: CardProps): JSX.Element {
           <span>Premium</span>
         </div>
       )}
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${block}__image-wrapper place-card__image-wrapper`}>
         <Link to='/'>
           <img
             className="place-card__image"

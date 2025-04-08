@@ -7,7 +7,6 @@ type CitiesProps = {
 
 function Cities({offers}: CitiesProps): JSX.Element {
   return (
-
     <div className="cities">
       <div className="cities__places-container container">
         <section className="cities__places places">
@@ -30,7 +29,7 @@ function Cities({offers}: CitiesProps): JSX.Element {
           </form>
           <div className="cities__places-list places__list tabs__content">
             {offers.map((offer) => (
-              <PlaceCard key={offer.id} offer={offer} />
+              <PlaceCard key={offer.id} block={'cities'} offer={offer}/>
             ))}
           </div>
         </section>

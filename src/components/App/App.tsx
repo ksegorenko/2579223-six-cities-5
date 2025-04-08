@@ -22,7 +22,7 @@ function App({offers}: AppScreenProps): JSX.Element {
           path={Paths.Favorites}
           element={
             <PrivateRoute
-              authStatus={AuthStatus.NoAuth}
+              authStatus={AuthStatus.Auth}
             >
               <FavoritesPage offers={offers} />
             </PrivateRoute>
