@@ -1,6 +1,7 @@
 import Cities from '../../components/Cities/Cities';
 import { Offer } from '../../types/offer.type';
 import { Link } from 'react-router-dom';
+import { Paths } from '../../const';
 
 type MainPageProps = {
   offers: Offer[];
@@ -20,7 +21,7 @@ function MainPage({offers}: MainPageProps): JSX.Element {
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
-                  <Link className="header__nav-link header__nav-link--profile" to="/">
+                  <Link className="header__nav-link header__nav-link--profile" to={Paths.Favorites}>
                     <div className="header__avatar-wrapper user__avatar-wrapper">
                     </div>
                     <span className="header__user-name user__name">Oliver.conner@gmail.com</span>

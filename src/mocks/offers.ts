@@ -17,7 +17,7 @@ const offers: Offer[] = [
     isPremium: false,
     rating: 4,
     previewImage: 'img/apartment-01.jpg',
-    description: 'A quiet cozy and picturesque place in the heart of Paris.',
+    description: 'A quiet cozy and picturesque place in the heart of Amsterdam.',
     bedrooms: 3,
     goods: ['Heating'],
     host: {
@@ -43,7 +43,7 @@ const offers: Offer[] = [
     isPremium: true,
     rating: 4.8,
     previewImage: 'img/apartment-02.jpg',
-    description: 'A stylish and modern apartment in the vibrant center of Berlin.',
+    description: 'A stylish and modern apartment in the vibrant center of Amsterdam.',
     bedrooms: 2,
     goods: ['Wi-Fi', 'Washing machine', 'Air conditioning'],
     host: {
