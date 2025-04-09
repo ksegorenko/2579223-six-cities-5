@@ -9,8 +9,8 @@ const offers: Offer[] = [
     price: 120,
     city: CityMap.Amsterdam,
     location: {
-      latitude: 48.8566,
-      longitude: 2.3522,
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
       zoom: 8
     },
     isFavorite: false,
@@ -35,8 +35,8 @@ const offers: Offer[] = [
     price: 200,
     city: CityMap.Amsterdam,
     location: {
-      latitude: 52.5200,
-      longitude: 13.4050,
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
       zoom: 8
     },
     isFavorite: true,
@@ -61,8 +61,8 @@ const offers: Offer[] = [
     price: 150,
     city: CityMap.Amsterdam,
     location: {
-      latitude: 52.3676,
-      longitude: 4.9041,
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
       zoom: 8
     },
     isFavorite: false,
@@ -87,8 +87,8 @@ const offers: Offer[] = [
     price: 500,
     city: CityMap.Amsterdam,
     location: {
-      latitude: 51.5074,
-      longitude: -0.1278,
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
       zoom: 8
     },
     isFavorite: true,
