@@ -18,8 +18,7 @@ const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
 
 function PlaceCard({ offer, block, size = 'large' }: CardProps): JSX.Element {
   const { id, isPremium, previewImage, price, rating, title, type } = offer;
-  const [activeCard, setActiveCard] = useState<string | null>(null);
-  void activeCard; // временная заглушка чтобы линтер не ругался
+  const [, setActiveCard] = useState<string | null>(null);
 
   return (
     <article
