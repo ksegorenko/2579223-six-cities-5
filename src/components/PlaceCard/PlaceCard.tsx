@@ -1,15 +1,50 @@
-function PlaceCard(): JSX.Element {
+import { Link } from 'react-router-dom';
+import { OfferPreview } from '../../types/preview.type';
+import { getRatingWidth } from '../../utils';
+import { useState } from 'react';
+
+type CardImageSize = 'small' | 'large';
+
+type CardProps = {
+  offer: OfferPreview;
+  block: string;
+  size?: CardImageSize;
+};
+
+const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
+  small: { width: '150', height: '110' },
+  large: { width: '260', height: '200' },
+};
+
+function PlaceCard({ offer, block, size = 'large' }: CardProps): JSX.Element {
+  const { id, isPremium, previewImage, price, rating, title, type } = offer;
+  const [, setActiveCard] = useState<string | null>(null);
+
   return (
-    <article className="cities__card place-card">
-      <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
-          <img className="place-card__image" src="img/apartment-01.jpg" width="260" height="200" alt="Place image"/>
-        </a>
+    <article
+      className={`${block}__card place-card`}
+      onMouseEnter={() => setActiveCard(id)}
+      onMouseLeave={() => setActiveCard(null)}
+    >
+      {isPremium && (
+        <div className="place-card__mark">
+          <span>Premium</span>
+        </div>
+      )}
+      <div className={`${block}__image-wrapper place-card__image-wrapper`}>
+        <Link to={`/offer/${id}`}>
+          <img
+            className="place-card__image"
+            src={previewImage}
+            alt={title}
+            {...sizeMap[size]}
+          />
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">&euro;120</b>
+            <b className="place-card__price-value">&euro;{price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
           <button className="place-card__bookmark-button button" type="button">
@@ -22,7 +57,7 @@ function PlaceCard(): JSX.Element {
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
             <span style={{
-              width: '80%'
+              width: getRatingWidth(rating)
             }}
             >
             </span>
@@ -30,9 +65,9 @@ function PlaceCard(): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">Beautiful &amp; luxurious apartment at great location</a>
+          <Link to={`/offer/${id}`}>{title}</Link>
         </h2>
-        <p className="place-card__type">Apartment</p>
+        <p className="place-card__type">{type}</p>
       </div>
     </article>
   );
