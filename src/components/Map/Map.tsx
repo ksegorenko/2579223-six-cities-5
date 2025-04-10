@@ -13,21 +13,21 @@ type MapProps = {
   selectedOfferId: OfferPreview[ 'id' ] | null;
 }
 
+const defaultCustomIcon = new Icon({
+  iconUrl: URL_MARKER_DEFAULT,
+  iconSize: [28, 40],
+  iconAnchor: [14, 40]
+});
+
+const activeCustomIcon = new Icon({
+  iconUrl: URL_MARKER_CURRENT,
+  iconSize: [28, 40],
+  iconAnchor: [14, 40]
+});
+
 function Map({ block, location, offers, selectedOfferId }: MapProps) {
   const mapRef = useRef(null);
   const map = useMap(mapRef, location);
-
-  const defaultCustomIcon = new Icon({
-    iconUrl: URL_MARKER_DEFAULT,
-    iconSize: [28, 40],
-    iconAnchor: [14, 40]
-  });
-
-  const activeCustomIcon = new Icon({
-    iconUrl: URL_MARKER_CURRENT,
-    iconSize: [28, 40],
-    iconAnchor: [14, 40]
-  });
 
   useEffect(() => {
     if (map) {

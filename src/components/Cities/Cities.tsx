@@ -39,7 +39,7 @@ function Cities({offers}: CitiesProps): JSX.Element {
           </form>
           <div className="cities__places-list places__list tabs__content">
             {offers.map((offer) => (
-              <PlaceCard key={offer.id} block={'cities'} offer={offer} onCardHover={handleCardHover} />
+              <PlaceCard key={offer.id} block={'cities'} offer={offer} setActiveCard={handleCardHover} />
             ))}
           </div>
         </section>

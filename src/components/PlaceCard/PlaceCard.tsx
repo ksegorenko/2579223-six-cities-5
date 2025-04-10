@@ -8,7 +8,7 @@ type CardProps = {
   offer: OfferPreview;
   block: string;
   size?: CardImageSize;
-  onCardHover?: (offerId: OfferPreview['id'] | null) => void;
+  setActiveCard?: (offerId: OfferPreview['id'] | null) => void;
 };
 
 const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
@@ -16,14 +16,14 @@ const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
   large: { width: '260', height: '200' },
 };
 
-function PlaceCard({ offer, block, size = 'large', onCardHover }: CardProps): JSX.Element {
+function PlaceCard({ offer, block, size = 'large', setActiveCard }: CardProps): JSX.Element {
   const { id, isPremium, previewImage, price, rating, title, type } = offer;
 
   function handleMouseEnter() {
-    onCardHover?.(id);
+    setActiveCard?.(id);
   }
   function handleMouseLeave() {
-    onCardHover?.(null);
+    setActiveCard?.(null);
   }
 
   return (
