@@ -1,11 +1,21 @@
 import { OfferPreview } from '../../types/preview.type';
 import PlaceCard from '../PlaceCard/PlaceCard';
+import Map from '../Map/Map';
+import { useState } from 'react';
+import { CityMap } from '../../const';
 
 type CitiesProps = {
   offers: OfferPreview[];
 }
 
 function Cities({offers}: CitiesProps): JSX.Element {
+  const [hoveredOfferId, setHoveredOfferId] = useState<OfferPreview['id'] | null>(null);
+  const activeCity = CityMap.Amsterdam;
+
+  function handleCardHover(offerId: OfferPreview['id'] | null) {
+    setHoveredOfferId(offerId);
+  }
+
   return (
     <div className="cities">
       <div className="cities__places-container container">
@@ -29,12 +39,12 @@ function Cities({offers}: CitiesProps): JSX.Element {
           </form>
           <div className="cities__places-list places__list tabs__content">
             {offers.map((offer) => (
-              <PlaceCard key={offer.id} block={'cities'} offer={offer}/>
+              <PlaceCard key={offer.id} block={'cities'} offer={offer} setActiveCard={handleCardHover} />
             ))}
           </div>
         </section>
         <div className="cities__right-section">
-          <section className="cities__map map"></section>
+          <Map block={'cities'} location={activeCity.location} offers={offers} selectedOfferId={hoveredOfferId} />
         </div>
       </div>
     </div>

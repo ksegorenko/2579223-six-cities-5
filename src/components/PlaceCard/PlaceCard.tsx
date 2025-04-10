@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { OfferPreview } from '../../types/preview.type';
 import { getRatingWidth } from '../../utils';
-import { useState } from 'react';
 
 type CardImageSize = 'small' | 'large';
 
@@ -9,6 +8,7 @@ type CardProps = {
   offer: OfferPreview;
   block: string;
   size?: CardImageSize;
+  setActiveCard?: (offerId: OfferPreview['id'] | null) => void;
 };
 
 const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
@@ -16,15 +16,21 @@ const sizeMap: Record<CardImageSize, {width: string; height: string}> = {
   large: { width: '260', height: '200' },
 };
 
-function PlaceCard({ offer, block, size = 'large' }: CardProps): JSX.Element {
+function PlaceCard({ offer, block, size = 'large', setActiveCard }: CardProps): JSX.Element {
   const { id, isPremium, previewImage, price, rating, title, type } = offer;
-  const [, setActiveCard] = useState<string | null>(null);
+
+  function handleMouseEnter() {
+    setActiveCard?.(id);
+  }
+  function handleMouseLeave() {
+    setActiveCard?.(null);
+  }
 
   return (
     <article
       className={`${block}__card place-card`}
-      onMouseEnter={() => setActiveCard(id)}
-      onMouseLeave={() => setActiveCard(null)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {isPremium && (
         <div className="place-card__mark">
