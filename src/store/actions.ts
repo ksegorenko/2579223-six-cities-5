@@ -1,5 +1,5 @@
-import { OfferPreview } from '../types/preview.type';
+import { Offer } from '../types/offer.type';
 import { createAction } from '@reduxjs/toolkit';
 
-export const changeCity = createAction<string>('CHANGE_CITY');
-export const fillOfferList = createAction<OfferPreview[]>('FILL_OFFER-LIST');
+export const changeCity = createAction<string>('change_city');
+export const fillOfferList = createAction<Offer[]>('fill_offers_list');
